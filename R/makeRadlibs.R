@@ -31,6 +31,11 @@ makeRadlibs <- function(phrase, wordset = NA) {
       type = "noun",
       regex = "[nN]oun"
     ),
+    adverb = list(
+      descriptors = "adverb",
+      type = "adverb",
+      regex = "[aA]dverb"
+    ),
     plural = list(
       descriptors = "plural",
       type = "plural",
@@ -45,11 +50,6 @@ makeRadlibs <- function(phrase, wordset = NA) {
       descriptors = "adjective",
       type = "adjective",
       regex = "[aA]djective"
-    ),
-    adverb = list(
-      descriptors = "adverb",
-      type = "adverb",
-      regex = "[aA]dverb"
     ),
     interjection = list(
       descriptors = "interjection",
