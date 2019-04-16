@@ -14,7 +14,7 @@
 
 makeRadlibs <- function(phrase, wordset = NA) {
     if(is.na(wordset)){
-        wordset <- read.csv("data/humor_dataset.csv", stringsAsFactors = FALSE)
+        wordset <- read.csv(file.path(system.file(package = "radlibs"), "data/humor_dataset.csv"), stringsAsFactors = FALSE)
         wordset <- data.table::data.table(fastPOStagger(wordset))[mean > 1.2,]
     }
 
