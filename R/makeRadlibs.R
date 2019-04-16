@@ -45,6 +45,11 @@ makeRadlibs <- function(phrase, wordset = NA) {
         } else { next }
     }
 
+    for(av in advpick){
+        if(!is.na(av)){
+            new_phrase <- stringr::str_replace(new_phrase, "adverb", av)
+        } else { next }
+    }
     for(v in verbpick){
         if(!is.na(v)){
             new_phrase <- stringr::str_replace(new_phrase, "verb", v)
@@ -57,11 +62,6 @@ makeRadlibs <- function(phrase, wordset = NA) {
         } else { next }
     }
 
-    for(av in advpick){
-        if(!is.na(av)){
-            new_phrase <- stringr::str_replace(new_phrase, "adverb", av)
-        } else { next }
-    }
 
     for(i in interpick){
         if(!is.na(i)){
