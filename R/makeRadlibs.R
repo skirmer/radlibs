@@ -5,6 +5,7 @@
 #' @return New string replacing the keywords with alternatives. Hopefully funny.
 #' @import stringr
 #' @import lexicon
+#' @importFrom data.table data.table
 #' @export
 #'
 #' @examples
