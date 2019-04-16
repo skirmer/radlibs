@@ -9,20 +9,18 @@
 #' @examples
 #' word_list <- sample(wordset$word, 100)
 #' newWords <- makeWordset(word_list)
+makeWordset <- function(word_list) {
+  taggedPOS <- qdap::pos(word_list, parallel = TRUE)
+  taggedPOS2 <- data.frame(cbind(word_list, taggedPOS$POStagged))
 
-makeWordset <- function(word_list){
+  taggedPOS2$part_of_speech <- NA
+  taggedPOS2[grep("NN|NNS|NNP|NNPS", taggedPOS2$POStags), "part_of_speech"] <- "Noun"
+  taggedPOS2[grep("VB|VBD|VBZ", taggedPOS2$POStags), "part_of_speech"] <- "Verb"
+  taggedPOS2[grep("JJ|JJR|JJS", taggedPOS2$POStags), "part_of_speech"] <- "Adjective"
+  taggedPOS2[grep("RB|RBR|RBS", taggedPOS2$POStags), "part_of_speech"] <- "Adverb"
+  taggedPOS2[grep("UH", taggedPOS2$POStags), "part_of_speech"] <- "Interjection"
 
-    taggedPOS <- qdap::pos(word_list, parallel = TRUE)
-    taggedPOS2 <- data.frame(cbind(word_list, taggedPOS$POStagged))
-
-    taggedPOS2$part_of_speech <- NA
-    taggedPOS2[grep("NN|NNS|NNP|NNPS", taggedPOS2$POStags), "part_of_speech"] <- "Noun"
-    taggedPOS2[grep("VB|VBD|VBZ", taggedPOS2$POStags), "part_of_speech"] <- "Verb"
-    taggedPOS2[grep("JJ|JJR|JJS", taggedPOS2$POStags), "part_of_speech"] <- "Adjective"
-    taggedPOS2[grep("RB|RBR|RBS", taggedPOS2$POStags), "part_of_speech"] <- "Adverb"
-    taggedPOS2[grep("UH", taggedPOS2$POStags), "part_of_speech"] <- "Interjection"
-
-    return(taggedPOS2)
+  return(taggedPOS2)
 }
 
 #' fastPOStagger
@@ -35,9 +33,8 @@ makeWordset <- function(word_list){
 #' @examples
 #' newwords <- data.frame(word = c("cat", "green", "slowly"))
 #' fastPOStagger(newwords)
-fastPOStagger <- function(wordDF){
-
-    wordset <- lexicon::grady_pos_feature(lexicon::hash_grady_pos)
-    taggedDF <- merge(wordDF, wordset, by = "word", all.x = TRUE)
-    return(taggedDF)
+fastPOStagger <- function(wordDF) {
+  wordset <- lexicon::grady_pos_feature(lexicon::hash_grady_pos)
+  taggedDF <- merge(wordDF, wordset, by = "word", all.x = TRUE)
+  return(taggedDF)
 }

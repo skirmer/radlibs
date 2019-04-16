@@ -11,63 +11,90 @@
 #' @examples
 #' makeRadlibs("not sure if i should verb or verb because its an adjective noun")
 #' "not sure if i should picket or go because its an charlatanical post"
-
 makeRadlibs <- function(phrase, wordset = NA) {
-    if(is.na(wordset)){
-        wordset <- read.csv(file.path(system.file(package = "radlibs"), "data/humor_dataset.csv"), stringsAsFactors = FALSE)
-        wordset <- data.table::data.table(fastPOStagger(wordset))[mean > 1.2,]
+  if (is.na(wordset)) {
+    wordset <- read.csv(file.path(system.file(package = "radlibs"), "data/humor_dataset.csv")
+        , stringsAsFactors = FALSE)
+    wordset <- data.table::data.table(fastPOStagger(wordset))[mean > 1.2, ]
+
+    propernouns <- read.csv(file.path(system.file(package = "radlibs"), "data/propernames.csv")
+        , stringsAsFactors = FALSE, header = FALSE)[, c(1:2)]
+    colnames(propernouns) <- c("word", "pos")
+    wordset <- rbind(wordset, propernouns, fill = TRUE)
+  }
+
+  word_types <- list(
+    noun = list(
+      descriptors = c("Noun", "Noun Phrase"),
+      type = "noun",
+      regex = "[nN]oun"
+    ),
+    plural = list(
+      descriptors = "Plural",
+      type = "plural",
+      regex = "[pP]lural"
+    ),
+    verb = list(
+      descriptors = "Verb (transitive)",
+      type = "verb",
+      regex = "[vV]erb"
+    ),
+    adjective = list(
+      descriptors = "Adjective",
+      type = "adjective",
+      regex = "[aA]djective"
+    ),
+    adverb = list(
+      descriptors = "Adverb",
+      type = "adverb",
+      regex = "[aA]dverb"
+    ),
+    interjection = list(
+      descriptors = "Interjection",
+      type = "interjection",
+      regex = "[iI]nterjection"
+    ),
+    place = list(
+      descriptors = c("city", "state", "country", "region"),
+      type = "place",
+      regex = "[pP]lace"
+    ),
+    celebrity = list(
+      descriptors = c("celebrity", "president", "hero", "character"),
+      type = "celebrity",
+      regex = "[cC]elebrity"
+    )
+  )
+
+  for (row in word_types) {
+    type <- as.character(row["type"])
+    regex <- as.character(row["regex"])
+    descriptors <- unlist(row["descriptors"])
+
+    word_types[[type]]$count <- stringr::str_count(phrase, regex)
+
+    word_types[[type]]$sample <- sample(
+      wordset[pos %in% descriptors, word],
+      stringr::str_count(phrase, regex),
+      replace = FALSE
+    )
+  }
+
+  new_phrase <- phrase
+
+  for (row in word_types) {
+    count <- as.numeric(row["count"])
+    sample <- unlist(row["sample"])
+    regex <- as.character(row["regex"])
+
+    if (count > 0) {
+      for (word in sample) {
+        new_phrase <- stringr::str_replace(new_phrase, regex, word)
+      }
+    } else {
+      next
     }
+  }
 
-    nouns <- stringr::str_count(phrase, "noun")
-    pnouns <- stringr::str_count(phrase, "plural")
-    verbs <- stringr::str_count(phrase, "verb")
-    adjectives <- stringr::str_count(phrase, "adjective")
-    adverbs <- stringr::str_count(phrase, "adverb")
-    interjections <- stringr::str_count(phrase, "interjection")
-
-    nounpick <- sample(wordset[pos %in% c("Noun", "Noun Phrase"),word], nouns, replace = FALSE)
-    pnounpick <- sample(wordset[pos == "Plural",word], pnouns, replace = FALSE)
-    verbpick <- sample(wordset[pos == "Verb (transitive)",word], verbs, replace = FALSE)
-    adjpick <- sample(wordset[pos == "Adjective",word], adjectives, replace = FALSE)
-    advpick <- sample(wordset[pos == "Adverb",word], adverbs, replace = FALSE)
-    interpick <- sample(wordset[pos == "Interjection",word], interjections, replace = FALSE)
-
-    new_phrase <- phrase
-    for(n in nounpick){
-        if(!is.na(n)){
-            new_phrase <- stringr::str_replace(new_phrase, "noun", n)
-        } else { next }
-    }
-
-    for(p in pnounpick){
-        if(!is.na(p)){
-            new_phrase <- stringr::str_replace(new_phrase, "plural", p)
-        } else { next }
-    }
-
-    for(av in advpick){
-        if(!is.na(av)){
-            new_phrase <- stringr::str_replace(new_phrase, "adverb", av)
-        } else { next }
-    }
-    for(v in verbpick){
-        if(!is.na(v)){
-            new_phrase <- stringr::str_replace(new_phrase, "verb", v)
-        } else { next }
-    }
-
-    for(aj in adjpick){
-        if(!is.na(aj)){
-            new_phrase <- stringr::str_replace(new_phrase, "adjective", aj)
-        } else { next }
-    }
-
-
-    for(i in interpick){
-        if(!is.na(i)){
-            new_phrase <- stringr::str_replace(new_phrase, "interjection", i)
-        } else { next }
-    }
-
-    return(new_phrase)
+  return(stringr::str_to_sentence(new_phrase))
 }
