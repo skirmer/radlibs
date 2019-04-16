@@ -4,10 +4,11 @@ Title: Build Your Own Madlibs!
 Version: 0.1.0
 Author: Stephanie Kirmer
 Maintainer: Stephanie Kirmer <stephanie@stephaniekirmer.com>
-Description: Make your phrase or sentence into something funny!
+Description: Make your phrase or sentence into something funny! Pass a string with the keywords in, 
+    and get out a bit of humor.
     My thanks to https://github.com/tomasengelthaler/HumorNorms for the default dataset of 
     words with humor ratings. Thanks to https://www.kaggle.com/vered1986/propernames-categories/version/1 
-    for the list of proper nouns.
+    for the list of proper nouns I started with.
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true

@@ -8,6 +8,8 @@ makeRadlibs(phrase, wordset = NA)
 }
 \arguments{
 \item{phrase}{String including any number of the words noun, verb, adjective, adverb, plural, or interjection}
+
+\item{wordset}{Data table of your choosing with columns "word" and "pos" at the minimum. Preferably all lowercase.}
 }
 \value{
 New string replacing the keywords with alternatives. Hopefully funny.

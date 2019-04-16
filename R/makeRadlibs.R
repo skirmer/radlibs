@@ -1,6 +1,7 @@
 #' makeRadlibs
 #'
 #' @param phrase String including any number of the words noun, verb, adjective, adverb, plural, or interjection
+#' @param wordset Data table of your choosing with columns "word" and "pos" at the minimum. Preferably all lowercase.
 #'
 #' @return New string replacing the keywords with alternatives. Hopefully funny.
 #' @import stringr
@@ -16,6 +17,7 @@ makeRadlibs <- function(phrase, wordset = NA) {
     wordset <- read.csv(file.path(system.file(package = "radlibs"), "data/humor_dataset.csv")
         , stringsAsFactors = FALSE)
     wordset <- data.table::data.table(fastPOStagger(wordset))[mean > 1.2, ]
+    wordset$pos <- tolower(wordset$pos)
 
     propernouns <- read.csv(file.path(system.file(package = "radlibs"), "data/propernames.csv")
         , stringsAsFactors = FALSE, header = FALSE)[, c(1:2)]
@@ -25,37 +27,37 @@ makeRadlibs <- function(phrase, wordset = NA) {
 
   word_types <- list(
     noun = list(
-      descriptors = c("Noun", "Noun Phrase"),
+      descriptors = c("noun", "noun phrase"),
       type = "noun",
       regex = "[nN]oun"
     ),
     plural = list(
-      descriptors = "Plural",
+      descriptors = "plural",
       type = "plural",
       regex = "[pP]lural"
     ),
     verb = list(
-      descriptors = "Verb (transitive)",
+      descriptors = c("verb (transitive)", "verb"),
       type = "verb",
       regex = "[vV]erb"
     ),
     adjective = list(
-      descriptors = "Adjective",
+      descriptors = "adjective",
       type = "adjective",
       regex = "[aA]djective"
     ),
     adverb = list(
-      descriptors = "Adverb",
+      descriptors = "adverb",
       type = "adverb",
       regex = "[aA]dverb"
     ),
     interjection = list(
-      descriptors = "Interjection",
+      descriptors = "interjection",
       type = "interjection",
       regex = "[iI]nterjection"
     ),
     place = list(
-      descriptors = c("city", "state", "country", "region"),
+      descriptors = c("city", "state", "country", "region", "place"),
       type = "place",
       regex = "[pP]lace"
     ),
