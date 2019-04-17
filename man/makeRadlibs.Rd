@@ -18,5 +18,5 @@ New string replacing the keywords with alternatives. Hopefully funny.
 makeRadlibs
 }
 \examples{
-makeRadlibs("not sure if i should verb or verb because its an adjective noun")
+\dontrun{makeRadlibs("not sure if i should verb or verb because its an adjective noun")}
 }

@@ -7,23 +7,18 @@
 #' @import stringr
 #' @import lexicon
 #' @importFrom data.table data.table
+#' @importFrom utils read.csv
 #' @export
 #'
 #' @examples
-#' makeRadlibs("not sure if i should verb or verb because its an adjective noun")
+#' \dontrun{makeRadlibs("not sure if i should verb or verb because its an adjective noun")}
 makeRadlibs <- function(phrase, wordset = NA) {
   if (is.na(wordset)) {
-    wordset <- read.csv(
-      file.path(system.file(package = "radlibs"), "data/humor_dataset.csv"),
-      stringsAsFactors = FALSE
-    )
+    wordset <- radlibs::humor_dataset
     wordset <- data.table::data.table(fastPOStagger(wordset))[mean > 1.2, ]
     wordset$pos <- tolower(wordset$pos)
 
-    propernouns <- read.csv(
-      file.path(system.file(package = "radlibs"), "data/propernames.csv"),
-      stringsAsFactors = FALSE, header = FALSE
-    )[, c(1:2)]
+    propernouns <- radlibs::proper_nouns
     colnames(propernouns) <- c("word", "pos")
     wordset <- rbind(wordset, propernouns, fill = TRUE)
   }
