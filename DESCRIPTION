@@ -3,6 +3,9 @@ Type: Package
 Title: Build Your Own Madlibs!
 Version: 0.1.0
 Author: Stephanie Kirmer
+Authors@R: c(
+    person("Stephanie", "Kirmer", email = "stephanie@stephaniekirmer.com", role = c("aut", "cre"))
+    )
 Maintainer: Stephanie Kirmer <stephanie@stephaniekirmer.com>
 Description: Make your phrase or sentence into something funny! Pass a string with the keywords in, 
     and get out a bit of humor.
@@ -18,3 +21,5 @@ Imports:
     lexicon,
     qdap,
     stringr (>= 1.4)
+Suggests:
+    testthat
