@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/skirmer/radlibs.svg?branch=master)](https://travis-ci.org/skirmer/radlibs) 
+
 # RadLibs
 
 Welcome! This is a small, fun package. Remember MadLibs from childhood roadtrips? This is something of 
