@@ -1,7 +1,7 @@
 # RadLibs
 
-Welcome! This is a small, fun package. Remember MadLibs from childhood roadtrips? This is that, but
-updated a bit.
+Welcome! This is a small, fun package. Remember MadLibs from childhood roadtrips? This is something of 
+a parody of that, updated a bit.
 
 To get started immediately, you can use the base function: `makeRadlibs()`. Just pass a string that
 includes any number of the following words, and it will fill in something (hopefully) funny!
@@ -50,4 +50,26 @@ Happy RadLibbing!
            ###   ###
            
 ```
+
+```
+> cowsay::say(radlibs::makeRadlibs("R package for verbing nouns via adjective nouns of their nouns"), by = "pig")
+
+
+ ----- 
+R package for swishing boogies via adept boots of their mooses 
+ ------ 
+    \   
+     \
+       _//| .-~~~-.
+     _/oo  }       }-@
+    ('')_  }       |
+     `--'| { }--{  }
+          //_/  /_/ [nosig]
+```
 PS: download `spongebob` or `cowsay` from CRAN to make things extra fun!
+
+## Credits
+
+My thanks to https://github.com/tomasengelthaler/HumorNorms for the default dataset of words with 
+humor ratings. Thanks to https://www.kaggle.com/vered1986/propernames-categories/version/1 for 
+the list of proper nouns I started with.

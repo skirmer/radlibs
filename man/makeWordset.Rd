@@ -16,6 +16,6 @@ Dataframe including part of speech of each word as best we can tell.
 makeWordset
 }
 \examples{
-word_list <- sample(wordset$word, 100)
-newWords <- makeWordset(word_list)
+word_list <- c("cat", "green", "slowly")
+makeWordset(word_list)
 }

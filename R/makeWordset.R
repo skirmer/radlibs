@@ -7,8 +7,8 @@
 #' @export
 #'
 #' @examples
-#' word_list <- sample(wordset$word, 100)
-#' newWords <- makeWordset(word_list)
+#' word_list <- c("cat", "green", "slowly")
+#' makeWordset(word_list)
 makeWordset <- function(word_list) {
   taggedPOS <- qdap::pos(word_list, parallel = TRUE)
   taggedPOS2 <- data.frame(cbind(word_list, taggedPOS$POStagged))

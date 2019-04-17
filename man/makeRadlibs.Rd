@@ -19,5 +19,4 @@ makeRadlibs
 }
 \examples{
 makeRadlibs("not sure if i should verb or verb because its an adjective noun")
-"not sure if i should picket or go because its an charlatanical post"
 }
