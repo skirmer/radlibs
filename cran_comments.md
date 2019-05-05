@@ -2,5 +2,5 @@
 
 ### Testing
 
-- Local macOS, R version 3.4.4
-- Tested in docker on R-DEV version (2019-04-16 r76403) "Unsuffered Consequences"
+- Local macOS, R version 3.5.3
+- There is one warning for a non-ASCII character in data. This is due to special symbols in Bjork's name.

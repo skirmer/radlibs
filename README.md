@@ -71,6 +71,11 @@ R package for swishing boogies via adept boots of their mooses
 ```
 PS: download `spongebob` or `cowsay` from CRAN to make things extra fun!
 
+## Installing
+
+We aren't on CRAN yet, but it's in the works. For the moment, please clone this repo and then 
+run `devtools::install` from inside the main folder.
+
 ## Credits
 
 My thanks to https://github.com/tomasengelthaler/HumorNorms for the default dataset of words with 

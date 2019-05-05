@@ -16,6 +16,6 @@ Original dataframe including part of speech columns.
 fastPOStagger
 }
 \examples{
-newwords <- data.frame(word = c("cat", "green", "slowly"))
-fastPOStagger(newwords)
+\dontrun{newwords <- data.frame(word = c("cat", "green", "slowly"))
+fastPOStagger(newwords)}
 }

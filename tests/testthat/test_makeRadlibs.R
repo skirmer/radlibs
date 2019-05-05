@@ -6,9 +6,9 @@ context("End-to-End Testing")
 
 test_that("makeRadlibs runs end-to-end without error", expect_true({
 
-    makeRadlibs("What the noun verb adjective!")
+    funny <- makeRadlibs("What the noun verb adjective!")
 
-    makeRadlibs("Interjection! Adverb!")
+    funny <- makeRadlibs("Interjection! Adverb!")
     TRUE
 
 })

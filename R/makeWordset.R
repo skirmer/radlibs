@@ -7,10 +7,10 @@
 #' @export
 #'
 #' @examples
-#' word_list <- c("cat", "green", "slowly")
-#' makeWordset(word_list)
+#' \dontrun{word_list <- c("cat", "green", "slowly")
+#' makeWordset(word_list)}
 makeWordset <- function(word_list) {
-  taggedPOS <- qdap::pos(word_list, parallel = TRUE)
+  taggedPOS <- qdap::pos(word_list)
   taggedPOS2 <- data.frame(cbind(word_list, taggedPOS$POStagged))
 
   taggedPOS2$part_of_speech <- NA
@@ -31,8 +31,8 @@ makeWordset <- function(word_list) {
 #' @export
 #'
 #' @examples
-#' newwords <- data.frame(word = c("cat", "green", "slowly"))
-#' fastPOStagger(newwords)
+#' \dontrun{newwords <- data.frame(word = c("cat", "green", "slowly"))
+#' fastPOStagger(newwords)}
 fastPOStagger <- function(wordDF) {
   wordset <- lexicon::grady_pos_feature(lexicon::hash_grady_pos)
   taggedDF <- merge(wordDF, wordset, by = "word", all.x = TRUE)

@@ -7,7 +7,7 @@ context("End-to-End Testing")
 test_that("fastPOStagger runs end-to-end without error", expect_true({
 
     wordDF <- data.frame(word = c("cat", "green", "slowly"))
-    fastPOStagger(wordDF)
+    tagged <- fastPOStagger(wordDF)
     TRUE
 
 })
