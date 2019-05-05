@@ -25,12 +25,8 @@ The contents of both columns need to be all lowercase.
 
 ## I need parts of speech help
 
-If you don't know the parts of speech for a dataset you want to use, I am also including two 
-functions that can assign these for you. `makeWordset()` does it the long/hard way, using NLP 
-to assign the part of speech. This function is powerful, but it can be slow.
-
-For the easier, quicker, but less powerful way, you can just match up to the default words list from the 
-`lexicon` package using the `fastPOStagger()` function. 
+If you don't know the parts of speech for a dataset you want to use, I am also including a 
+function that can assign these for you. While it is not hugely comprehensive, `POSTagger()` will match your dataset to slightly more than 250,000 words already tagged with part of speech. 
 
 Happy RadLibbing!
 

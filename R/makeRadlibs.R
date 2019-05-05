@@ -15,7 +15,7 @@
 makeRadlibs <- function(phrase, wordset = NA) {
   if (is.na(wordset)) {
     wordset <- radlibs::humor_dataset
-    wordset <- data.table::data.table(fastPOStagger(wordset))[mean > 1.2, ]
+    wordset <- data.table::data.table(POSTagger(wordset))[mean > 1.2, ]
     wordset$pos <- tolower(wordset$pos)
 
     propernouns <- radlibs::proper_nouns
