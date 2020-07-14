@@ -7,7 +7,7 @@ Welcome! This is a small, fun package. Remember MadLibs from childhood roadtrips
 a parody of that, updated a bit.
 
 To get started immediately, you can use the base function: `makeRadlibs()`. Just pass a string that
-includes any number of the following words, and it will fill in something (hopefully) funny!
+includes any number of the following words, wrapped in curly braces, and it will fill in something (hopefully) funny!
 
 * noun
 * plural
@@ -31,7 +31,7 @@ function that can assign these for you. While it is not hugely comprehensive, `P
 Happy RadLibbing!
 
 ```
-> spongebob::spongebobsay(radlibs::makeRadlibs("Playing RadLibs is like verbing with nouns! Interjection!"))
+> spongebob::spongebobsay(radlibs::makeRadlibs("Playing RadLibs is like {verb}ing with {noun}s! {Interjection}!"))
  ------------------------------------- 
 | PlaYInG RAdlIbs iS LIke cONcrEteInG |
 | wItH STrinGS! NonSenSe!             |
@@ -51,7 +51,7 @@ Happy RadLibbing!
 ```
 
 ```
-> cowsay::say(radlibs::makeRadlibs("R package for verbing nouns via adjective nouns of their nouns"), by = "pig")
+> cowsay::say(radlibs::makeRadlibs("R package for {verb}ing {noun}s via {adjective} {noun}s of their {noun}s"), by = "pig")
 
 
  ----- 
@@ -67,9 +67,20 @@ R package for swishing boogies via adept boots of their mooses
 ```
 PS: download `spongebob` or `cowsay` from CRAN to make things extra fun!
 
+## Advanced Usage
+
+If you'd like to repeat one of the generated funny words, then you'll just need to include a numeral at the end of the word you want to replace. For example:
+
+```
+> radlibs::makeRadlibs("I {verb1} the {noun} but then a {noun} {verb1}s me!")
+
+'I paste the mayor but then a cat pastes me!'
+```
+
 ## Installing
 
-We aren't on CRAN yet, but it's in the works. For the moment, `install_github("skirmer/radlibs")` should get you everything!
+Radlibs is available on CRAN, please enjoy! You can also use the Python version via `pip install radlibs-py`. 
+
 
 ## Credits
 
