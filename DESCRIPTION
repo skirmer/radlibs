@@ -1,7 +1,7 @@
 Package: radlibs
 Type: Package
 Title: Build Your Own Madlibs!
-Version: 0.1.0
+Version: 0.2.0
 Authors@R: c(
     person("Stephanie", "Kirmer", email = "stephanie@stephaniekirmer.com", role = c("aut", "cre"))
     )
