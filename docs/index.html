@@ -6,22 +6,20 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Build Your Own Madlibs! • radlibs</title>
-<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
-<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- sticky kit --><script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
+<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="bootstrap-toc.css">
+<script src="bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
+<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
 <script src="pkgdown.js"></script><meta property="og:title" content="Build Your Own Madlibs!">
 <meta property="og:description" content="Make your phrase or sentence into something funny! Pass a string with the keywords in, 
-    and get out a bit of humor.
-    My thanks to https://github.com/tomasengelthaler/HumorNorms for the default dataset of 
-    words with humor ratings. Thanks to https://www.kaggle.com/vered1986/propernames-categories/version/1 
-    for the list of proper nouns I started with.">
-<meta name="twitter:card" content="summary">
+    and get out a bit of humor. ">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 </head>
-<body>
+<body data-spy="scroll" data-target="#toc">
     <div class="container template-home">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -34,7 +32,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">radlibs</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0</span>
       </span>
     </div>
 
@@ -42,7 +40,7 @@
       <ul class="nav navbar-nav">
 <li>
   <a href="index.html">
-    <span class="fa fa-home fa-lg"></span>
+    <span class="fas fa fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -62,13 +60,16 @@
 <!--/.navbar -->
 
       
+
       </header><div class="row">
   <div class="contents col-md-9">
+
+
 <div id="radlibs" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#radlibs" class="anchor"></a>RadLibs</h1></div>
 <p>Welcome! This is a small, fun package. Remember MadLibs from childhood roadtrips? This is something of a parody of that, updated a bit.</p>
-<p>To get started immediately, you can use the base function: <code><a href="reference/makeRadlibs.html">makeRadlibs()</a></code>. Just pass a string that includes any number of the following words, and it will fill in something (hopefully) funny!</p>
+<p>To get started immediately, you can use the base function: <code><a href="reference/makeRadlibs.html">makeRadlibs()</a></code>. Just pass a string that includes any number of the following words, wrapped in curly braces, and it will fill in something (hopefully) funny!</p>
 <ul>
 <li>noun</li>
 <li>plural</li>
@@ -83,10 +84,9 @@
 <div id="i-need-parts-of-speech-help" class="section level2">
 <h2 class="hasAnchor">
 <a href="#i-need-parts-of-speech-help" class="anchor"></a>I need parts of speech help</h2>
-<p>If you don’t know the parts of speech for a dataset you want to use, I am also including two functions that can assign these for you. <code><a href="reference/makeWordset.html">makeWordset()</a></code> does it the long/hard way, using NLP to assign the part of speech. This function is powerful, but it can be slow.</p>
-<p>For the easier, quicker, but less powerful way, you can just match up to the default words list from the <code>lexicon</code> package using the <code><a href="reference/fastPOStagger.html">fastPOStagger()</a></code> function.</p>
+<p>If you don’t know the parts of speech for a dataset you want to use, I am also including a function that can assign these for you. While it is not hugely comprehensive, <code><a href="reference/POSTagger.html">POSTagger()</a></code> will match your dataset to slightly more than 250,000 words already tagged with part of speech.</p>
 <p>Happy RadLibbing!</p>
-<pre><code>&gt; spongebob::spongebobsay(radlibs::makeRadlibs("Playing RadLibs is like verbing with nouns! Interjection!"))
+<pre><code>&gt; spongebob::spongebobsay(radlibs::makeRadlibs("Playing RadLibs is like {verb}ing with {noun}s! {Interjection}!"))
  ------------------------------------- 
 | PlaYInG RAdlIbs iS LIke cONcrEteInG |
 | wItH STrinGS! NonSenSe!             |
@@ -103,7 +103,7 @@
             &lt;&lt;    &lt;&lt;
            ###   ###
            </code></pre>
-<pre><code>&gt; cowsay::say(radlibs::makeRadlibs("R package for verbing nouns via adjective nouns of their nouns"), by = "pig")
+<pre><code>&gt; cowsay::say(radlibs::makeRadlibs("R package for {verb}ing {noun}s via {adjective} {noun}s of their {noun}s"), by = "pig")
 
 
  ----- 
@@ -118,16 +118,37 @@ R package for swishing boogies via adept boots of their mooses
           //_/  /_/ [nosig]</code></pre>
 <p>PS: download <code>spongebob</code> or <code>cowsay</code> from CRAN to make things extra fun!</p>
 </div>
+<div id="advanced-usage" class="section level2">
+<h2 class="hasAnchor">
+<a href="#advanced-usage" class="anchor"></a>Advanced Usage</h2>
+<p>If you’d like to repeat one of the generated funny words, then you’ll just need to include a numeral at the end of the word you want to replace. For example:</p>
+<pre><code>&gt; radlibs::makeRadlibs("I {verb1} the {noun} but then a {noun} {verb1}s me!")
+
+'I paste the mayor but then a cat pastes me!'</code></pre>
+</div>
+<div id="installing" class="section level2">
+<h2 class="hasAnchor">
+<a href="#installing" class="anchor"></a>Installing</h2>
+<p>Radlibs is available on CRAN, please enjoy! You can also use the Python version via <code>pip install radlibs-py</code>.</p>
+</div>
 <div id="credits" class="section level2">
 <h2 class="hasAnchor">
 <a href="#credits" class="anchor"></a>Credits</h2>
 <p>My thanks to <a href="https://github.com/tomasengelthaler/HumorNorms" class="uri">https://github.com/tomasengelthaler/HumorNorms</a> for the default dataset of words with humor ratings. Thanks to <a href="https://www.kaggle.com/vered1986/propernames-categories/version/1" class="uri">https://www.kaggle.com/vered1986/propernames-categories/version/1</a> for the list of proper nouns I started with.</p>
 </div>
 </div>
+
   </div>
 
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <div class="license">
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <div class="links">
+<h2>Links</h2>
+<ul class="list-unstyled">
+<li>Download from CRAN at <br><a href="https://cloud.r-project.org/package=radlibs">https://​cloud.r-project.org/​package=radlibs</a>
+</li>
+</ul>
+</div>
+<div class="license">
 <h2>License</h2>
 <ul class="list-unstyled">
 <li>
@@ -138,24 +159,34 @@ R package for swishing boogies via adept boots of their mooses
 <div class="developers">
 <h2>Developers</h2>
 <ul class="list-unstyled">
-<li>Stephanie Kirmer <br><small class="roles"> Maintainer </small>  </li>
+<li>Stephanie Kirmer <br><small class="roles"> Author, maintainer </small>  </li>
 </ul>
 </div>
 
-  </div>
+  <div class="dev-status">
+<h2>Dev status</h2>
+<ul class="list-unstyled">
+<li><a href="https://travis-ci.org/skirmer/radlibs"><img src="https://travis-ci.org/skirmer/radlibs.svg?branch=master" alt="Build Status"></a></li>
+<li><a href="https://codecov.io/gh/skirmer/radlibs"><img src="https://codecov.io/gh/skirmer/radlibs/branch/master/graph/badge.svg" alt="codecov"></a></li>
+</ul>
 </div>
+</div>
+</div>
+
 
       <footer><div class="copyright">
   <p>Developed by Stephanie Kirmer.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
 </div>
+
       </footer>
 </div>
 
   
+
 
   </body>
 </html>

@@ -1,3 +1,10 @@
+## v0.2.0
+
+Submission 1
+
+- Added feature allowing user to designate words for repetition.
+- Made one breaking change to require keywords to be enclosed in curly braces.
+
 ## v0.1.0
 
 ### Testing
@@ -13,3 +20,4 @@ Submission 1
 
 - Local macOS, R version 3.5.3
 - There is one warning for a non-ASCII character in data. This is due to special symbols in Bjork's name.
+

@@ -4,11 +4,13 @@
 \name{proper_nouns}
 \alias{proper_nouns}
 \title{A list of English proper nouns with the classifications.}
-\format{A data frame with 747 rows and 2 variables:
+\format{
+A data frame with 747 rows and 2 variables:
 \describe{
   \item{word}{string of the actual word}
   \item{pos}{part of speech (aka celebrity, place, etc)}
-}}
+}
+}
 \source{
 \url{https://www.kaggle.com/vered1986/propernames-categories/version/1}
 }
