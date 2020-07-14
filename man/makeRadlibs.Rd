@@ -7,7 +7,7 @@
 makeRadlibs(phrase, wordset = NA)
 }
 \arguments{
-\item{phrase}{String including any number of the words noun, verb, adjective, adverb, plural, or interjection}
+\item{phrase}{String including any number of the words noun, verb, adjective, adverb, plural, or interjection enclosed in curly braces}
 
 \item{wordset}{Data table of your choosing with columns "word" and "pos" at the minimum. Preferably all lowercase.}
 }
@@ -18,5 +18,5 @@ New string replacing the keywords with alternatives. Hopefully funny.
 makeRadlibs
 }
 \examples{
-\dontrun{makeRadlibs("not sure if i should verb or verb because its an adjective noun")}
+\dontrun{makeRadlibs("not sure if i should {verb} or {verb} because it's an {adjective} {noun}")}
 }

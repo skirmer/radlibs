@@ -1,3 +1,10 @@
+## v0.2.0
+
+Submission 1
+
+- Added feature allowing user to designate words for repetition.
+- Made one breaking change to require keywords to be enclosed in curly braces.
+
 ## v0.1.0
 
 ### Testing

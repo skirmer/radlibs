@@ -4,7 +4,8 @@
 \name{humor_dataset}
 \alias{humor_dataset}
 \title{A list of English words with the "humor ratings" attached.}
-\format{A data frame with 4997 rows and 16 variables:
+\format{
+A data frame with 4997 rows and 16 variables:
 \describe{
   \item{word}{string of the actual word}
   \item{mean}{mean of humor rating across all audiences}
@@ -23,7 +24,8 @@
   \item{sd_old}{sd humor rating (old)}
   \item{sd_young}{sd of humor rating (young)}
 
-}}
+}
+}
 \source{
 \url{https://github.com/tomasengelthaler/HumorNorms}
 }
