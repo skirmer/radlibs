@@ -1,5 +1,9 @@
 ## v0.2.0
 
+Submission 2
+
+- Ensured top level does not include docs or cran_comments.md.
+
 Submission 1
 
 - Added feature allowing user to designate words for repetition.

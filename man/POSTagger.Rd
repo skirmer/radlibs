@@ -16,6 +16,6 @@ Original dataframe including part of speech columns.
 POSTagger
 }
 \examples{
-newwords <- data.frame(word = c("cat", "green", "slowly"))
-POSTagger(newwords)
+\dontrun{newwords <- data.frame(word = c("cat", "green", "slowly"))
+POSTagger(newwords)}
 }
