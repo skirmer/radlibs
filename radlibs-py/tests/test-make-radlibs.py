@@ -14,9 +14,7 @@ test_cases = [
 def test_funct(testcase):
     """Test a few phrase options
     """
-
     result = make_radlibs(testcase)
-
     assert isinstance(result, str)
     assert len(result.split()) == len(testcase.split())
     assert '{noun1}' not in result
