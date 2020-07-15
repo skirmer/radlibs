@@ -11,7 +11,7 @@ test_cases = [
 
 
 @pytest.mark.parametrize("testcase", test_cases)
-def test_funct(testcase):
+def test_make_radlibs(testcase):
     """Test a few phrase options
     """
     result = make_radlibs(testcase)

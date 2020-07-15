@@ -23,12 +23,13 @@ def test_version():
 test_cases = [
     ("I am a {noun}"),
     ("You {verb} {adverb}! {Interjection}!"),
-    ("The {noun1} {verb}s and then the {noun1} {verb}s")
+    ("The {noun1} {verb}s and then the {noun1} {verb}s"),
+    ("The {adjective1} {noun1} {verb}s and then the {adjective1} {noun1} {verb}s")
 ]
 
 
 @pytest.mark.parametrize("testcase", test_cases)
-def test_funct(testcase):
+def test_radlibs_cli(testcase):
     """Test a few phrase options
     """
     result = make_radlibs(testcase)
