@@ -1,0 +1,13 @@
+Metadata-Version: 1.1
+Name: radlibs
+Version: 0.2.0
+Summary: Build Your Own Madlibs!
+Home-page: https://github.com/skirmer/radlibs/tree/master/radlibs-py
+Author: Stephanie Kirmer
+Author-email: stephanie@stephaniekirmer.com
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent

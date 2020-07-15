@@ -1,0 +1,18 @@
+language: python
+python:
+  - "3.6"      # current default Python on Travis CI
+
+install:
+  - pip install -r requirements.txt
+# command to run tests
+script:
+  - pytest
+
+# Whitelist to only do push builds on master branch
+# https://stackoverflow.com/a/31882307
+branches:
+  only:
+    - main
+    - master
+    - release
+
