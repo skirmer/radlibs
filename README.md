@@ -62,6 +62,14 @@ pip install radlibs
 install.packages(radlibs)
 ```
 
+## Versions
+
+| Language | Package | Available From | Tests | Coverage |
+|-|-|-|-|-|
+| Python | [`radlibs`](https://github.com/skirmer/radlibs/tree/master/radlibs-py) | [![PyPI](https://badge.fury.io/py/radlibs.svg)](https://badge.fury.io/py/radlibs) | Pending | Pending |
+| R | [`radlibs`](https://github.com/skirmer/radlibs/tree/master/radlibs-r) | [![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version-last-release/radlibs)](https://cran.r-project.org/package=radlibs) [![CRAN\_Download\_Badge](https://cranlogs.r-pkg.org/badges/grand-total/radlibs)](https://cran.r-project.org/package=radlibs) | [![Build Status](https://travis-ci.org/skirmer/radlibs.svg?branch=master)](https://travis-ci.org/skirmer/radlibs) | [![codecov](https://codecov.io/gh/skirmer/radlibs/branch/master/graph/badge.svg)](https://codecov.io/gh/skirmer/radlibs) |
+
+
 ## Credits
 
 My thanks to https://github.com/tomasengelthaler/HumorNorms for the default dataset of words with

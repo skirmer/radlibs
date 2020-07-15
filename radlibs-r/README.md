@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/skirmer/radlibs.svg?branch=master)](https://travis-ci.org/skirmer/radlibs) 
 [![codecov](https://codecov.io/gh/skirmer/radlibs/branch/master/graph/badge.svg)](https://codecov.io/gh/skirmer/radlibs)
 
-# RadLibs
+# RadLibs for R
 
 Welcome! This is a small, fun package. Remember MadLibs from childhood roadtrips? This is something of 
 a parody of that, updated a bit.
