@@ -1,0 +1,67 @@
+jobs:
+  include:
+    - name: Radlibs-py
+      language: python
+      python:
+      - "3.7"      # current default Python on Travis CI
+      before_install:
+        - python --version
+        - pip install -U pip
+        - pip install -U pytest
+        - pip install codecov
+      install:
+        - pip install ".[test]" . # install package + test dependencies
+      script: cd radlibs-py ; pytest # run tests
+      after_success:
+        - codecov # submit coverage
+      branches:
+        only:
+          - main
+          - master
+          - release
+          
+    - name: Radlibs-cli
+      language: python
+      python:
+      - "3.7"      # current default Python on Travis CI
+      before_install:
+        - python --version
+        - pip install -U pip
+        - pip install -U pytest
+        - pip install codecov
+      install:
+        - pip install ".[test]" . # install package + test dependencies
+      script: cd radlibs-cli ; pytest # run tests
+      after_success:
+        - codecov # submit coverage
+      branches:
+        only:
+          - main
+          - master
+          - release
+
+    - name: Radlibs-R
+      language: r
+      before_install:
+        - cd radlibs-r
+      install:
+        - R -e 'install.packages("data.table")'
+        - R -e 'install.packages("stringr")'
+        - R -e 'install.packages("qdap")'
+        - R -e 'install.packages("testthat")'
+        - R -e 'install.packages("lexicon")'
+      jobs:
+        include:
+        # Primary test for all builds
+        - r: release
+          os: linux
+          after_success:
+          - Rscript -e 'install.packages("covr"); covr::codecov()'
+      branches:
+        only:
+          - master
+          - release
+      matrix:
+        fast_finish: true
+      cache: packages
+      warnings_are_errors: false
