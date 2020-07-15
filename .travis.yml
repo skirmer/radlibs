@@ -12,8 +12,9 @@ jobs:
         - cd radlibs-py
       install:
         - pip install ".[test]" . # install package + test dependencies
-      script: pytest --cov-report=xml --cov=radlibs tests/ # run tests
+      script: pytest # run tests
       after_success:
+        - pytest --cov-report=xml --cov=radlibs tests/
         - codecov # submit coverage
       branches:
         only:
@@ -33,8 +34,9 @@ jobs:
         - cd radlibs-cli
       install:
         - pip install . # install package + test dependencies
-      script: pytest --cov-report=xml --cov=radlibsme tests/ # run tests
+      script: pytest # run tests
       after_success:
+        - pytest --cov-report=xml --cov=radlibsme tests/
         - codecov # submit coverage
       branches:
         only:
