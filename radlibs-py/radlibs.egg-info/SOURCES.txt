@@ -1,0 +1,12 @@
+MANIFEST.in
+README.md
+setup.py
+radlibs/__init__.py
+radlibs/generatewordopts.py
+radlibs/makeradlibs.py
+radlibs/postagger.py
+radlibs.egg-info/PKG-INFO
+radlibs.egg-info/SOURCES.txt
+radlibs.egg-info/dependency_links.txt
+radlibs.egg-info/requires.txt
+radlibs.egg-info/top_level.txt

@@ -1,0 +1,12 @@
+site_name: radlibs
+site_url: https://skirmer.github.io/radlibs/radlibs-cli/
+repo_url: https://github.com/skirmer/radlibs/tree/master/radlibs-cli/
+
+nav:
+  - Home: 'index.md'
+
+theme:
+  name: material
+
+plugins:
+  - search

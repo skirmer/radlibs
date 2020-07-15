@@ -14,6 +14,7 @@ setup(name='radlibs',
                         'feather-format'],
       package_data={'radlibs': ['data/*.feather']},
       include_package_data=True,
+      python_requires=">=3.6",
       classifiers=[
           "Programming Language :: Python :: 3",
           "License :: OSI Approved :: BSD License",
