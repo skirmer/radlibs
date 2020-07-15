@@ -9,9 +9,10 @@ jobs:
         - pip install -U pip
         - pip install -U pytest
         - pip install codecov
+        - cd radlibs-py
       install:
         - pip install ".[test]" . # install package + test dependencies
-      script: cd radlibs-py ; pytest # run tests
+      script: pytest # run tests
       after_success:
         - codecov # submit coverage
       branches:
@@ -29,9 +30,10 @@ jobs:
         - pip install -U pip
         - pip install -U pytest
         - pip install codecov
+        - cd radlibs-cli
       install:
-        - pip install ".[test]" . # install package + test dependencies
-      script: cd radlibs-cli ; pytest # run tests
+        - pip install . # install package + test dependencies
+      script: pytest # run tests
       after_success:
         - codecov # submit coverage
       branches:
