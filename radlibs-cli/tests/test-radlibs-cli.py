@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 from itertools import combinations
 import random
 import subprocess
@@ -11,15 +13,8 @@ from radlibs import _generate_word_options, pos_tagger, make_radlibs
 RANDOM_SEED = 460908
 
 
-def test_help():
-    """Test the CLI with --help flag."""
-    result = CliRunner().invoke(app, ["--help"])
-    assert result.exit_code == 0
-    assert "Generate an ASCII picture of Spongebob" in result.output
-
-
 def test_version():
-    """Test the CLI with --version flag."""
+    """Test the CLI runs correctly."""
     result = CliRunner().invoke(app, ["--version"])
     assert result.exit_code == 0
     assert result.output.strip() == __version__
@@ -33,38 +28,18 @@ test_cases = [
 
 
 @pytest.mark.parametrize("testcase", test_cases)
-def test_command(testcase):
-    """Test the CLI with each styling flag.
+def test_funct(testcase):
+    """Test a few phrase options
     """
-
-    result = CliRunner().invoke(
-        app, [testcase])
-    assert result.exit_code == 0
-
-    expected = expected_func(testcase) + "\n"
-
-    assert result.output == expected
-
-
-@pytest.mark.parametrize("testcase", test_cases)
-def test_command_python_m(testcase):
-    """Test the CLI using python -m invocation with each styling flag.
-    """
-    result = subprocess.run(
-        ["python", "-m", "radlibs"] + [testcase]],
-        stdout = subprocess.PIPE,
-        stderr = subprocess.PIPE,
-        universal_newlines = True,
-    )
-    assert result.returncode == 0
-
-    random.seed(RANDOM_SEED)
-    expected=expected_func(testcase)
-
-    assert result.stdout == expected + "\n"
+    result = make_radlibs(testcase)
+    assert isinstance(result, str)
+    assert len(result.split()) == len(testcase.split())
+    assert '{noun1}' not in result
+    assert '{verb}' not in result
+    assert '{adjective1}' not in result
 
 
 def test_error_no_input():
-    result=CliRunner().invoke(app, [])
+    result = CliRunner().invoke(app, [])
     assert result.exit_code == 2
-    assert "Error: Missing argument 'phrase'." in result.output
+    assert "Error: Missing argument 'PHRASE'." in result.output

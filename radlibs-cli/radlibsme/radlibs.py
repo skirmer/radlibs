@@ -37,11 +37,8 @@ def main(
         show_default=False,
     ),
 ):
-    """Generate an ASCII picture of Spongebob saying something provided by the user, but in Mocking
-    Spongebob case.
-    geNerATe aN AScIi pICtuRE of sPoNGebOB sAyIng SOMeThIng ProvIDeD by THe usER, BuT iN mOcKing
-    SpONGeboB caSE.
+    """Take a given phrase and replace key words with funny words.
     """
-    out = radlibs(phrase)
+    out = make_radlibs(phrase)
 
     typer.echo(out)
