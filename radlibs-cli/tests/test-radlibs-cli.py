@@ -7,7 +7,7 @@ import subprocess
 import pytest
 from typer.testing import CliRunner
 
-from radlibsme.radlibs import app, __version__
+from radlibsme.radlibsme import app, __version__
 from radlibs import _generate_word_options, pos_tagger, make_radlibs
 
 RANDOM_SEED = 460908

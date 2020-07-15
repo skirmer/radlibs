@@ -1,6 +1,5 @@
-
 #!/usr/bin/env python3
-from radlibsme.radlibs import __version__, app
+from radlibsme.radlibsme import __version__, app
 
 __all__ = [
     app,
