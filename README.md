@@ -22,21 +22,6 @@ own use case, using your own sample of words (joke for family, for example), you
 pandas dataframe containing, at minimum, a `word` column and a `pos` column indicating its part of speech.
 The contents of both columns need to be all lowercase.
 
-## Advanced usage
-
-If you'd like to repeat one of the generated funny words, then you'll just need to include a numeral at the end of the word you want to replace. For example:
-
-```
->>> radlibs.make_radlibs("I {verb1} the {noun} but then a {noun} {verb1}s me!")
-'I paste the mayor but then a cat pastes me!'
-```
-
-
-## I need parts of speech help
-
-If you don't know the parts of speech for a dataset you want to use, I am also including a
-function in each package that can assign these for you. 
-
 Happy RadLibbing!
 
 ```
