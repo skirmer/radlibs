@@ -44,6 +44,9 @@ jobs:
 
     - name: Radlibs-R
       language: r
+      cache: packages
+      warnings_are_errors: false
+      sudo: required
       before_install:
         - cd radlibs-r
       install:
@@ -52,18 +55,13 @@ jobs:
         - R -e 'install.packages("qdap")'
         - R -e 'install.packages("testthat")'
         - R -e 'install.packages("lexicon")'
-      jobs:
-        include:
-        # Primary test for all builds
-        - r: release
-          os: linux
-          after_success:
-          - Rscript -e 'install.packages("covr"); covr::codecov()'
+        - R -e 'install.packages("covr")'
+      after_success:
+          - Rscript -e 'library(covr); codecov()'
       branches:
         only:
+          - main
           - master
           - release
       matrix:
         fast_finish: true
-      cache: packages
-      warnings_are_errors: false
