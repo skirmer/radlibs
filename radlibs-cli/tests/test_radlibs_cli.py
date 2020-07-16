@@ -20,6 +20,20 @@ def test_version():
     assert result.output.strip() == __version__
 
 
+def test_help():
+    """Test the CLI with --help flag."""
+    result = CliRunner().invoke(app, ["--help"])
+    assert result.exit_code == 0
+    assert "Take a given phrase and replace key words with funny words." in result.output
+
+
+def test_version():
+    """Test the CLI with --version flag."""
+    result = CliRunner().invoke(app, ["--version"])
+    assert result.exit_code == 0
+    assert result.output.strip() == __version__
+
+
 test_cases = [
     ("I am a {noun}"),
     ("You {verb} {adverb}! {Interjection}!"),
