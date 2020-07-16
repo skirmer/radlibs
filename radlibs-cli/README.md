@@ -13,10 +13,10 @@ I ink that trifle so blankly!
 
 ## Installation
 
-This is just available on github right now, but I'll get it up on pypi as soon as I can.
+This is just available on github right now, but I'll get it up on pypi as soon as I can. Clone this repo, then make your way to the radlibs-cli folder.
 
 ```
-pip install -e git+https://github.com/skirmer/radlibs.git#egg=version_subpkg&subdirectory=radlibs-cli
+pip install .
 ```
 
 For deeper details on the package functionality, check out [the python version](https://github.com/skirmer/radlibs). This is a wrapper of the python version, so their functionalities will match.
