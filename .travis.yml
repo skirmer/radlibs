@@ -11,7 +11,7 @@ jobs:
         - pip install codecov
         - cd radlibs-py
       install:
-        - pip install ".[test]" . # install package + test dependencies
+        - pip install . # install package + test dependencies
       script: coverage run -m pytest 
       after_success:
         - codecov # submit coverage

@@ -49,12 +49,14 @@ install.packages(radlibs)
 
 ## Versions
 
-| Language | Package | Available From | Tests | Coverage |
-|-|-|-|-|-|
-| Python | [`radlibs`](https://github.com/skirmer/radlibs/tree/master/radlibs-py) | [![PyPI version](https://badge.fury.io/py/radlibs.svg)](https://badge.fury.io/py/radlibs) | [![Build Status](https://travis-ci.org/skirmer/radlibs.svg?branch=master)](https://travis-ci.org/skirmer/radlibs) | Pending |
-| CLI | [`radlibs`](https://github.com/skirmer/radlibs/tree/master/radlibs-cli) | Currently just github | [![Build Status](https://travis-ci.org/skirmer/radlibs.svg?branch=master)](https://travis-ci.org/skirmer/radlibs) | Pending |
-| R | [`radlibs`](https://github.com/skirmer/radlibs/tree/master/radlibs-r) | [![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version-last-release/radlibs)](https://cran.r-project.org/package=radlibs) [![CRAN\_Download\_Badge](https://cranlogs.r-pkg.org/badges/grand-total/radlibs)](https://cran.r-project.org/package=radlibs) | [![Build Status](https://travis-ci.org/skirmer/radlibs.svg?branch=master)](https://travis-ci.org/skirmer/radlibs) | [![codecov](https://codecov.io/gh/skirmer/radlibs/branch/master/graph/badge.svg)](https://codecov.io/gh/skirmer/radlibs) |
+| Language | Package | Available From |
+|-|-|-|
+| Python | [`radlibs`](https://github.com/skirmer/radlibs/tree/master/radlibs-py) | [![PyPI version](https://badge.fury.io/py/radlibs.svg)](https://badge.fury.io/py/radlibs) |
+| CLI | [`radlibs`](https://github.com/skirmer/radlibs/tree/master/radlibs-cli) | Currently just github |
+| R | [`radlibs`](https://github.com/skirmer/radlibs/tree/master/radlibs-r) | [![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version-last-release/radlibs)](https://cran.r-project.org/package=radlibs) [![CRAN\_Download\_Badge](https://cranlogs.r-pkg.org/badges/grand-total/radlibs)](https://cran.r-project.org/package=radlibs) ||
 
+[![Build Status](https://travis-ci.org/skirmer/radlibs.svg?branch=master)](https://travis-ci.org/skirmer/radlibs)
+[![codecov](https://codecov.io/gh/skirmer/radlibs/branch/master/graph/badge.svg)](https://codecov.io/gh/skirmer/radlibs)
 
 ## Credits
 
