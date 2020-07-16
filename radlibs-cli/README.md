@@ -4,7 +4,7 @@ This version of radlibs is available for use at command line whenever you're in 
 
 ## Usage
 
-After installing, just write at command line:
+After installing, just write your chosen phrase/s at command line, such as:
 
 ```
 > radlibsme "I {verb} that {noun} so {adjective}ly!"
