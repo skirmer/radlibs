@@ -1,0 +1,6 @@
+# credentials and key material
+*.env
+*.pem
+*.pub
+*.rdp
+*_rsa
